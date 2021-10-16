@@ -10,7 +10,7 @@ export class RecipeService {
    recipeChanged = new Subject<Recipe[]>()
 
    private recipes: Recipe[] =[
-        new Recipe('Test Recipe',
+      /*   new Recipe('Test Recipe',
                    'description',
                    'https://hips.hearstapps.com/delish/assets/17/31/1501791674-delish-chicken-curry-horizontal.jpg',
                    [
@@ -24,10 +24,15 @@ export class RecipeService {
                   [
                      new Ingredient('Meat', 2),
                      new Ingredient('Salad', 30)
-                  ]),
+                  ]), */
     ];
 
     constructor(private shoppingListService: ShoppingListService) {}
+
+    setRecipes(recipes: Recipe[]) {
+      this.recipes = recipes;
+      this.recipeChanged.next(this.recipes.slice());
+    }
 
     getRecipes() {
        return this.recipes.slice();
