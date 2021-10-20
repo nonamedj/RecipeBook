@@ -6,11 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ShoppingListService } from './shopping-list/shoppinglist.service';
 import { RecipeService } from './recipes/recipe.service';
-import {HttpClientModule } from '@angular/common/http';
-import { RecipesModule } from './recipes/recipes.module';
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -20,10 +17,7 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RecipesModule,
-    ShoppingListModule,
     SharedModule,
-    AuthModule,
     AppRoutingModule
   ],
   providers: [ShoppingListService, RecipeService],
